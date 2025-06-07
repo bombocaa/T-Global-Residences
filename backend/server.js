@@ -12,7 +12,10 @@ const PORT = process.env.PORT || 3001;
 // Middleware
 app.use(helmet());
 app.use(cors({
-  origin: 'http://localhost:3000', // Allow requests from frontend
+  origin: [
+    'http://localhost:3000',
+    'https://t-global-residences.onrender.com'
+  ],
   credentials: true
 }));
 app.use(bodyParser.json());
