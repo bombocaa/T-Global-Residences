@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar-variant-1 { 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 2.5rem;
+  background: #537D5D;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.navbar-variant-1 .logo img {
+  height: 3.8rem;
+  margin-left: 2rem;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.navbar-variant-1 .logo img:hover {
+  transform: scale(1.02);
+}
+
+.navbar-variant-1 .nav-links { 
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  transition: all 0.3s ease;
+  margin-right: 2rem;
+}
+
+.navbar-variant-1 .nav-links a { 
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  letter-spacing: 1.2px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 0.6rem 1rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navbar-variant-1 .nav-links a::after { 
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 2px;
+  background-color: #99BC85;
+  transition: width 0.3s ease;
+}
+
+.navbar-variant-1 .nav-links a:hover { 
+  color: #99BC85;
+  transform: translateY(-1px);
+}
+
+.navbar-variant-1 .nav-links a:hover::after { 
+  width: 100%;
+}
+
+.navbar-variant-1 .nav-btn-link-1 { 
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  letter-spacing: 1.2px;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.1rem;
+  padding: 0.6rem 1rem;
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.navbar-variant-1 .nav-btn-link-1::after { 
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 2px;
+  background-color: #99BC85;
+  transition: width 0.3s ease;
+}
+
+
+.navbar-variant-1 .schedule-btn {
+  background: none;
+  color: #ffffff;
+  padding: 0.6rem 1rem;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.navbar-variant-1 .schedule-btn:hover {
+  background: none;
+  transform: translateY(-1px);
+  box-shadow: none;
+}
+
+.navbar-variant-1 .hamburger { 
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+  padding: 0.2rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.navbar-variant-1 .hamburger .bar { 
+  height: 2px;
+  background-color: #fff;
+  width: 100%;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.navbar-variant-1 .hamburger:hover .bar { 
+  background-color: #99BC85;
+}
+
+.navbar-variant-1 .hamburger:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .navbar-variant-1 {
+    padding: 0.9rem 1.5rem;
+  }
+
+  .navbar-variant-1 .logo img {
+    height: 3.2rem;
+    margin-left: 0;
+  }
+
+  .navbar-variant-1 .hamburger {
+    display: flex;
+  }
+
+  .navbar-variant-1 .nav-links { 
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+    background: rgba(8, 71, 8, 0.98);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 2rem;
+    text-align: center;
+    z-index: 999;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .navbar-variant-1 .nav-links.open { 
+    display: flex;
+  }
+
+  .navbar-variant-1 .nav-links a { 
+    padding: 0.8rem 0;
+    font-size: 1.2rem;
+  }
+
+  .navbar-variant-1 .nav-btn-link-1 { 
+    width: 100%;
+    font-size: 1.2rem;
+  }
+
+  .navbar-variant-1 .schedule-btn {
+    margin-top: 0;
+    width: auto;
+    padding: 0.8rem 0;
+  }
+}
+
+@media (min-width: 769px) {
+  .navbar-variant-1 .nav-links { 
+    display: flex;
+    gap: 2rem;
+  }
+
+  .navbar-variant-1 .nav-links a { 
+    color: #fff;
+    font-size: 1.1rem;
+    text-decoration: none;
+  }
+
+  .navbar-variant-1 .nav-links a:hover {
+    color: #99BC85;
+  }
+}

@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+
+.inquire-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2E5F3E;
+  margin-bottom: 0.5rem;
+}
+
+.inquire-subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.inquire-form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.inquire-form label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.inquire-form input,
+.inquire-form textarea {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+  resize: none;
+}
+
+.inquire-form input:focus,
+.inquire-form textarea:focus {
+  border-color: #36a136;
+  outline: none;
+}
+
+.submit-btn {
+  background-color: #36a136;
+  color: white;
+  border: none;
+  padding: 0.9rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%;
+  font-weight: 600;
+}
+
+.submit-btn:hover {
+  background-color: #2d8e2d;
+}
+
+.appointment-form-wrapper {
+    margin-top: 10rem;
+    margin-left: 40rem;
+    margin-bottom: 5rem;
+    background-color: #ffffff;
+    padding: 3rem;
+    width: 50rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  .appointment-form-wrapper .inquire-title {
+    color: #2E5F3E;
+  }
+  
+  .appointment-form-wrapper .submit-btn {
+    background-color: #99BC85;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .appointment-form-wrapper .submit-btn:hover {
+    background-color: #88a874;
+  }
+
+@media (max-width: 900px) {
+  .appointment-form-wrapper {
+    width: 95%;
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .appointment-form-wrapper {
+    width: 98%;
+    margin-top: 7rem;
+    max-width: 340px;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+}
