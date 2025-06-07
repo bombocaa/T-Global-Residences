@@ -3,7 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import bodyParser from 'body-parser';
-import chatbotService from './services/ChatbotService.js';
+import chatbotService from '../services/chatbotService.js';
 
 const app = express();
 // Backend runs on port 3001 while frontend runs on default port 3000
