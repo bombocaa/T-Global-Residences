@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { db } from "../firebase";  // Import db from firebase.js
-import { collection, addDoc, serverTimestamp } from "firebase/firestore";  // Import Firestore methods
+import { collection, addDoc } from "firebase/firestore";  // Import Firestore methods
 import "../styles/footer.css";
-import { FaFacebookF, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FaFacebookF,FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 const Footer = () => {
   const [formData, setFormData] = useState({
@@ -36,17 +36,7 @@ const Footer = () => {
         fullName: formData.name,
         email: formData.email,
         phoneNo: formData.phone,
-        inquiry: formData.message,
-      });
-
-      // Add notification to Firestore
-      await addDoc(collection(db, "notifications"), {
-        userId: "My4FhZC1u5Zl5YrRPwPSY5hA1Jg1",
-        type: "tenant-inquiry",
-        title: "New Tenant Inquiry",
-        message: `Inquiry from ${formData.name}`,
-        timestamp: serverTimestamp(),
-        read: false
+        inquiry: formData.message,  // Add the message as an inquiry field
       });
 
       // Clear the form and any error message
@@ -106,7 +96,7 @@ const Footer = () => {
         <div className="footer-column">
           <h4>Inquire Now</h4>
           <form className="footer-inquire-form" onSubmit={handleSubmit}>
-            {errorMessage && <p className="error-message">{errorMessage}</p>}
+            {errorMessage && <p className="error-message">{errorMessage}</p>}  {/* Display error message */}
             <div className="form-group">
               <input
                 type="text"
