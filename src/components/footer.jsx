@@ -36,8 +36,17 @@ const Footer = () => {
         fullName: formData.name,
         email: formData.email,
         phoneNo: formData.phone,
-        inquiry: formData.message,  // Add the message as an inquiry field
-        date: serverTimestamp()     // Add the current server timestamp
+        inquiry: formData.message,
+      });
+
+      // Add notification to Firestore
+      await addDoc(collection(db, "notifications"), {
+        userId: "My4FhZC1u5Zl5YrRPwPSY5hA1Jg1",
+        type: "tenant-inquiry",
+        title: "New Tenant Inquiry",
+        message: `Inquiry from ${formData.name}`,
+        timestamp: serverTimestamp(),
+        read: false
       });
 
       // Clear the form and any error message
@@ -97,7 +106,7 @@ const Footer = () => {
         <div className="footer-column">
           <h4>Inquire Now</h4>
           <form className="footer-inquire-form" onSubmit={handleSubmit}>
-            {errorMessage && <p className="error-message">{errorMessage}</p>}  {/* Display error message */}
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
             <div className="form-group">
               <input
                 type="text"
