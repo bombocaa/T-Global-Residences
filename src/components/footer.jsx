@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { db } from "../firebase";  // Import db from firebase.js
-import { collection, addDoc } from "firebase/firestore";  // Import Firestore methods
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";  // Import Firestore methods
 import "../styles/footer.css";
-import { FaFacebookF,FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FaFacebookF, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 const Footer = () => {
   const [formData, setFormData] = useState({
@@ -37,6 +37,7 @@ const Footer = () => {
         email: formData.email,
         phoneNo: formData.phone,
         inquiry: formData.message,  // Add the message as an inquiry field
+        date: serverTimestamp()     // Add the current server timestamp
       });
 
       // Clear the form and any error message
